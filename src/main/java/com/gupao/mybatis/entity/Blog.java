@@ -1,6 +1,5 @@
 package com.gupao.mybatis.entity;
 
-import org.omg.CORBA.INTERNAL;
 
 public class Blog {
 
@@ -9,6 +8,12 @@ public class Blog {
     private String authorId;
 
     public Integer getBid() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                bid++;
+            }
+        }).start();
         return bid;
     }
 
